@@ -24,7 +24,7 @@ public class DataJpaController implements Serializable {
     public DataJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("project.enterprise_projcet.ktp_jar_0.0.1-SNAPSHOTPU");
+    private EntityManagerFactory emf =Persistence.createEntityManagerFactory("project.enterprise_projcet.ktp_jar_0.0.1-SNAPSHOTPU");
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
@@ -34,6 +34,7 @@ public class DataJpaController implements Serializable {
     }
     
     
+
     public void create(Data data) {
         EntityManager em = null;
         try {

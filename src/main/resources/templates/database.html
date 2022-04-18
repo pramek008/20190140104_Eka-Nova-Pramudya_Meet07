@@ -3,7 +3,7 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -61,15 +61,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <th scope="col">Nama</th>
                         <th scope="col">Tanggal Lahir</th>
                         <th scope="col">Alamat</th>
+                        <th scope="col">Warganegara</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="data:${newData}">
-                        <td th:text="${data.no_ktp}"></td>
+                        <td th:text="${data.noKtp}"></td>
                         <td th:text="${data.nama}"></td>
-                        <td th:text="${#calendars.format(data.tgl_lahir, 'dd-MMM-yyyy')}"></td>
+                        <td th:text="${#calendars.format(data.tglLahir, 'dd-MMM-yyyy')}"></td>
                         <td th:text="${data.alamat}"></td>
+                        <td th:text="${data.warganegara}"></td>
                         <td>
                             <a href="/detail" class="btn btn-success">Detail</a>
                             <a href="/edit" class="btn btn-warning">Edit</a>

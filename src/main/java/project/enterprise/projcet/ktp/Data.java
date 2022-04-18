@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Data.findByNama", query = "SELECT d FROM Data d WHERE d.nama = :nama"),
     @NamedQuery(name = "Data.findByTglLahir", query = "SELECT d FROM Data d WHERE d.tglLahir = :tglLahir"),
     @NamedQuery(name = "Data.findByJenisKelamin", query = "SELECT d FROM Data d WHERE d.jenisKelamin = :jenisKelamin"),
-    @NamedQuery(name = "Data.findByAlmat", query = "SELECT d FROM Data d WHERE d.almat = :almat"),
+    @NamedQuery(name = "Data.findByAlamat", query = "SELECT d FROM Data d WHERE d.alamat = :alamat"),
     @NamedQuery(name = "Data.findByAgama", query = "SELECT d FROM Data d WHERE d.agama = :agama"),
     @NamedQuery(name = "Data.findByStatus", query = "SELECT d FROM Data d WHERE d.status = :status"),
     @NamedQuery(name = "Data.findByPekerjaan", query = "SELECT d FROM Data d WHERE d.pekerjaan = :pekerjaan"),
@@ -62,8 +62,8 @@ public class Data implements Serializable {
     @Column(name = "jenis_kelamin")
     private String jenisKelamin;
     @Basic(optional = false)
-    @Column(name = "almat")
-    private String almat;
+    @Column(name = "alamat")
+    private String alamat;
     @Basic(optional = false)
     @Column(name = "agama")
     private String agama;
@@ -89,13 +89,13 @@ public class Data implements Serializable {
         this.id = id;
     }
 
-    public Data(Long id, String noKtp, String nama, Date tglLahir, String jenisKelamin, String almat, String agama, String status, String warganegara, String masaBerlaku) {
+    public Data(Long id, String noKtp, String nama, Date tglLahir, String jenisKelamin, String alamat, String agama, String status, String warganegara, String masaBerlaku) {
         this.id = id;
         this.noKtp = noKtp;
         this.nama = nama;
         this.tglLahir = tglLahir;
         this.jenisKelamin = jenisKelamin;
-        this.almat = almat;
+        this.alamat = alamat;
         this.agama = agama;
         this.status = status;
         this.warganegara = warganegara;
@@ -142,12 +142,12 @@ public class Data implements Serializable {
         this.jenisKelamin = jenisKelamin;
     }
 
-    public String getAlmat() {
-        return almat;
+    public String getAlamat() {
+        return alamat;
     }
 
-    public void setAlmat(String almat) {
-        this.almat = almat;
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
     }
 
     public String getAgama() {
